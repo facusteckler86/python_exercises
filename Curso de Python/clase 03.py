@@ -31,20 +31,20 @@ for expo in range(16):
 
 # Bucle for con uso del range
 
-import time
+# import time
 for i in range(1,5):
     print(f"Mississippi:{i}")
-    breakpoint
+    breakpoint # type: ignore
     print("Listos o no, aca voy")
 
     # Bloque while y else
 
     i = 1
-while i < 5:
-    print(i)
-    i += 1
+while i < 5: # type: ignore
+    print(i) # type: ignore
+    i += 1 # type: ignore
 else:
-    print("else:", i)
+    print("else:", i) # type: ignore
 
 # Desplazamiento de izq a derecha
 
@@ -76,7 +76,7 @@ print(var, var_left, var_right)
 x = 1
 y = 0
 
-z = ((x == y) and (x == y)) or not(x == y)
+z = ((x == y) and (x == y)) or not(x == y) # type: ignore
 print(not(z))
 
 # Caso 02
@@ -92,6 +92,10 @@ e = x >> 2
 f = x << 2
 
 print(a, b, c, d, e, f)
+
+#Listas en Python
+
+
 
 
 

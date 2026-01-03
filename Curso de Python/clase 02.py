@@ -1,9 +1,9 @@
 # prueba hoja 40
 
-def f (x,y):
-    x= x + 3
-    y.append(23)
-    print (x , y)
+def f (x,y): # type: ignore
+    x = x + 3 # type: ignore
+    y.append(23) # type: ignore
+    print (x , y) # type: ignore
 
 x = 22
 y = [22]
