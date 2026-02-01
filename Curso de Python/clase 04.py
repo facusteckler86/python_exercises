@@ -95,6 +95,71 @@ print("\nLa longitud de la lista ahora es:", len(hat_list))
 
 print("Lista Final:",hat_list)
 
+####################
+result = 0
+
+for x in [3,3,5]:
+    if x > 3:
+        result = result - x
+    else:
+        result = result + x
+
+###########################
+
+# Agregando elementos en una lista: append() e insert()
+
+#list.append(value) Aca se toma el valor del argumento y se coloca al final de la lista que posee el método.
+
+# El método insert() es un poco mas completo, ya que lo puede agregar en cualquier parte de la lista, no solo al final como con append()
+
+numbers = [111, 7, 2, 1]
+print(len(numbers))
+print(numbers)
+
+###
+
+numbers.append(4)
+
+print(len(numbers))
+print(numbers)
+
+###
+
+numbers.insert(0, 222)
+print(len(numbers))
+print(numbers)
+
+numbers.insert(1, 333)
+
+#
+
+my_list = []  # Creando una lista vacía.
+
+for i in range(5):
+    my_list.append(0, i + 1) # type: ignore
+
+print(my_list) # type: ignore
+
+## Otro ejemplo ##
+
+my_list = [10, 1, 8, 3, 5]
+total = 0
+
+for i in range(len(my_list)):
+    total += my_list[i]
+
+print(total)
+
+## mi tipo de lista, pero simplificada
+
+my_list = [10, 1, 8, 3, 5]
+total = 0
+
+for i in my_list:
+    total += i
+
+print(total)
+
 
 
 
