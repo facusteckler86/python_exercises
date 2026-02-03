@@ -3,6 +3,12 @@
 
 # Listas 
 
+##  La lista es un tipo de dato en Python que se utiliza para almacenar múltiples objetos. Es una colección ordenada y mutable de elementos separados por comas entre corchetes
+
+from operator import length_hint
+from tarfile import LENGTH_LINK, LENGTH_NAME
+
+
 numbers = [10, 5, 7, 2, 1]
 
 print("Contenido de la lista:", numbers)  # Imprimiendo contenido de la lista original.
@@ -159,6 +165,93 @@ for i in my_list:
     total += i
 
 print(total)
+
+## Orden de listas
+
+my_list = [10, 1, 8, 3, 5]
+
+my_list[0], my_list[4] = my_list[4], my_list[0]
+my_list[1], my_list[3] = my_list[3], my_list[1]
+
+print(my_list)
+
+# El uso del for
+
+for i in range(length_hint // 2): # type: ignore
+    my_list[i], my_list[LENGTH_LINK - i - 1] = my_list[LENGTH_NAME - i - 1], my_list[i]
+
+print(my_list)
+
+# Orden Burbuja
+
+# Se lo usa muy poco, pero nunca para listas extensas
+
+# Digamos que una lista se puede ordenar de dos maneras:
+
+# ascendente (o más precisamente - no descendente) - si en cada par de elementos adyacentes, el primer elemento no es mayor que el segundo;
+
+# descendente (o más precisamente - no ascendente) - si en cada par de elementos adyacentes, el primer elemento no es menor que el segundo.
+#
+
+my_list = [8, 10, 6, 2, 4]  # lista a ordenar
+
+for i in range(len(my_list) - 1):  # necesitamos (5 - 1) comparaciones
+    if my_list[i] > my_list[i + 1]:  # compara elementos adyacentes
+        my_list[i], my_list[i + 1] = my_list[i + 1], my_list[i]  # Si terminamos aquí, tenemos que intercambiar elementos.
+
+my_list = [8, 10, 6, 2, 4]  # lista a ordenar
+swapped = True  # Lo necesitamos verdadero (True) para ingresar al bucle while.
+
+while swapped:
+    swapped = False  # no hay intercambios hasta ahora
+    for i in range(len(my_list) - 1):
+        if my_list[i] > my_list[i + 1]:
+            swapped = True  # ¡ocurrió el intercambio!
+            my_list[i], my_list[i + 1] = my_list[i + 1], my_list[i]
+
+print(my_list)
+
+# Ordenamiento Burbuja - modelo interactivo
+
+
+my_list = []
+swapped = True
+num = int(input("¿Cuántos elementos deseas ordenar?: "))
+
+for i in range(num):
+    val = float(input("Ingresa un elemento de la lista: "))
+    my_list.append(val) # type: ignore
+
+while swapped:
+    swapped = False
+    for i in range(len(my_list) - 1): # type: ignore
+        if my_list[i] > my_list[i + 1]:
+            swapped = True
+            my_list[i], my_list[i + 1] = my_list[i + 1], my_list[i]
+
+print("\nOrdenada:")
+print(my_list) # type: ignore
+
+## Resumen:
+
+# método sort() para ordenar los elementos de una lista
+
+lst = [5, 3, 1, 2, 4]
+print(lst)
+
+lst.sort()
+print(lst)  # output: [1, 2, 3, 4, 5]
+
+# También hay un método de lista llamado reverse(), que puedes usar para invertir la lista:
+
+lst = [5, 3, 1, 2, 4]
+print(lst)
+
+lst.reverse()
+print(lst)  # output: [4, 2, 1, 3, 5]
+
+
+
 
 
 
